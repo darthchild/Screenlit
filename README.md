@@ -1,4 +1,4 @@
-# Movie Review Website
+# Screenlit - Movie Review Website
 
 A full-stack web application where users can browse, view, and add movie reviews. Built with a **React** frontend and a **Spring Boot** backend, using **MongoDB** for data storage.
 
