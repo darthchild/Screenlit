@@ -9,22 +9,16 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class ReviewService {
 
     private final ReviewRepository reviewRepository;
-    private final MovieRepository movieRepository;
     private final MongoTemplate mongoTemplate;
 
     public ReviewService(ReviewRepository reviewRepository, MovieRepository movieRepository, MongoTemplate mongoTemplate) {
         this.reviewRepository = reviewRepository;
-        this.movieRepository = movieRepository;
         this.mongoTemplate = mongoTemplate;
     }
-
-
 
     public Review createReview(String imdbId, String reviewBody){
         Review review = reviewRepository.insert(new Review(reviewBody));

@@ -4,7 +4,7 @@ import React from 'react'
 
 const Layout = () => {
     return (
-        // inclding a refernce to the Outlet component in the HTML
+        // including a refernce to the Outlet component in the HTML
         <main>
             <Outlet/>
         </main>

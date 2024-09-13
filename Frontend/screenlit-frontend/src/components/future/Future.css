@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+
+.under-development {
+    padding: 50px;
+    height: 100vh;
+}
+
+.under-development h1 {
+    font-size: 5em;
+    color: #ff9800;
+    margin: 0;
+}
+
+.under-development p {
+    font-size: 1.5em;
+    color: #c3c3c3;
+}

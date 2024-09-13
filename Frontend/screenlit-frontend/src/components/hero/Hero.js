@@ -1,25 +1,44 @@
 import './Hero.css';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import { Link, useNavigate } from 'react-router-dom';
+import PlayButton from '../buttons/PlayButton';
+import SeeReviewsButton from '../buttons/SeeReviewsButton'
 
-// destructuring the props passed into this component
-// Paper element encapsulates each Movie item displayed in teh carousel
 const Hero = ({movies}) => {
     return (
-        <div className = 'movie-carousel-container'>
+        <div className='movie-carousel-container'>
             <Carousel>
                 {
-                    movies.map((movie) =>{
+                    movies?.map((movie) =>{
+                        const navigate = useNavigate();
+                        const trailerLink = movie.trailerLink;
+                        
+                        function reviews(movieId){
+                            navigate(`/Reviews/${movieId}`);
+                        }
                         return (
-                            <Paper>
+                            <Paper key={movie.imdbId}>
                                 <div className='movie-card-container'>
-                                    <div className="movie-card">
+                                    <div className="movie-card" style={{
+                                        "--img": `url(${movie.backdrops[0]})`
+                                    }}>
                                         <div className="movie-detail">
                                             <div className="movie-poster">
-                                                <img src={movie.poster} />
+                                                <img src={movie.poster} alt={movie.title} />
                                             </div>
-                                            <div className="movie-title">
-                                                <h4>{movie.title}</h4>
+                                            <div className="movie-info">
+                                                <div className="movie-title">
+                                                    <h2>{movie.title}</h2>
+                                                </div>
+                                                <div className="movie-buttons">
+                                                    <Link to={`/Trailer/${trailerLink.substring(trailerLink.length-11)}`} style={{ textDecoration: 'none' }}>
+                                                        <PlayButton className="play-button"> Play Trailer</PlayButton>
+                                                    </Link>
+                                                    <SeeReviewsButton onClick={() => reviews(movie.imdbId)}>See Reviews</SeeReviewsButton>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -32,6 +51,5 @@ const Hero = ({movies}) => {
         </div>
     );
 };
-
 
 export default Hero;

@@ -1,71 +1,95 @@
-.movie-carousel-container{
+.movie-carousel-container {
     width: 100vw;
     background-color: black;
 }
-.movie-poster{
-    height: 300px;
-    border: 1px solid gold;
-    border-radius: 10px;
-    overflow: hidden;
-}
-.movie-poster > img{
-    height: 100%;
-    width: 100%;
-
-}
-.movie-card-container{
+.movie-card-container {
     height: 550px;
     background-color: black;
 }
-.movie-card{
+.movie-card {
     background-repeat: no-repeat;
-    width:100%;
+    width: 100%;
     height: 100%;
     background-size: cover;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)), var(--img);
 }
-.movie-detail{
+.movie-detail {
     position: absolute;
-    top:200px;
+    top: 200px;
+    left: 200px;
     display: flex;
-    justify-content: space-evenly;
-    width:100%;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
-.movie-title{
-    color:white;
+.movie-poster {
+    flex: 0 0 auto;
+    height: 300px;
+    border: 1px solid #aaaaaa;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 40px;
+}
+.movie-poster > img {
+    height: 100%;
+    width: 100%;
+}
+.movie-info {
+    flex: 1;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+}
+.movie-title {
+    color: white;
+    margin-bottom: 20px;
+}
+.movie-title h2 {
+    font-size: 3.5rem;
+    margin: 0;
+    word-break: break-word;
+}
+.movie-buttons {
+    display: flex;
+    flex-direction: column;
+}
+.play-button a {
+    text-decoration: none;
 }
 
-.movie-buttons-container{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    width:300px;
-}
-
-.play-button-icon-container{
-    padding:0px;
-    margin:0px;
-    width:150px;
-}
-.play-button-icon{
-    padding:0px;
-    margin:0px;
-    color:gold;
-    font-size: 3rem;
-    transition: 0.3s;
-    cursor: pointer;
-}
-.play-button-icon:hover{
-    font-size: 4rem;
-    color:white;
+/* New style for the Reviews button container */
+.movie-review-button-container {
+    margin-left: 20px; /* Added margin to separate from play button */
 }
 
 @media only screen and (max-width: 800px) {
-    .movie-detail{
+    .movie-detail {
         flex-direction: column;
         align-items: center;
-        top:20px;
+        top: 20px;
+        padding: 0 20px;
+    }
+    .movie-poster {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .movie-info {
+        align-items: center;
+        text-align: center;
+        height: auto;
+    }
+    .movie-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .play-button-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .movie-review-button-container {
+        margin-left: 0;
+        margin-top: 20px;
     }
 }

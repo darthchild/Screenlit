@@ -1,0 +1,27 @@
+.register {
+    color: #8e7900 !important;
+    border-color: #8e7900 !important;
+    background-color: #212529 !important;
+}
+.register:hover {
+    background-color: #8e7900 !important; 
+    color: #ffffff !important; 
+}
+.login{
+    background-color:#8e7900 !important; 
+    border-color:#8e7900 !important; 
+}
+
+.navbar-nav {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+.navbar-nav .nav-link {
+    margin-left: 15px !important; 
+}
+
+.title-text{
+    margin-left: 2px !important;
+}
+  
