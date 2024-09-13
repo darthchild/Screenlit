@@ -2,17 +2,16 @@
 
 A full-stack web application where users can browse, view, and add movie reviews. Built with a **React** frontend and a **Spring Boot** backend, using **MongoDB** for data storage.
 
-## Features
+## Features ⚡
 
 - Browse movie reviews from other users
 - Add your own reviews for movies
 - View detailed information and reviews for specific movies
 
-## Technologies Used
+## Tech Stack 🔨
 
 ### Frontend
 - **React.js**
-- **CSS** for styling
 
 ### Backend
 - **Spring Boot**
