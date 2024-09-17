@@ -1,8 +1,6 @@
 import './Hero.css';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import PlayButton from '../buttons/PlayButton';
 import SeeReviewsButton from '../buttons/SeeReviewsButton'

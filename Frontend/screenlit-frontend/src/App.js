@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import api from "./api/axiosConfig";
 import { useState, useEffect } from "react";
@@ -13,7 +12,7 @@ import Future from './components/future/Future'
 
 function App() {
   /*
-  Returning a destructured array from teh useState Hook, the 1st item in the Des. array
+  Returning a destructured array from the useState Hook, the 1st item in the Des. array
   "movie" will store an array of movie data returned from a call to the relevant API endpoint
   the 2nd item "setMovies" is a functions which can be used to change the state of the "movies"
   varaible
@@ -31,7 +30,7 @@ function App() {
   are processed, the UI thread is not blocked & will still be responsive so the user screen 
   doesnt freezes while the Op. is taking place
 
-  implemneting useEffect hook so getMovies function is executed when App component firts loads
+  implementing useEffect hook so getMovies function is executed when App component firts loads
   */
 
 	const [movies, setMovies] = useState();
