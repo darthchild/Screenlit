@@ -41,7 +41,7 @@ function App() {
 	const getMovies = async () => {
 		try
 		{
-			const response = await api.get("/api/movies");
+			const response = await api.get("/api/v1/movies");
 			//console.log(response.data);
 			setMovies(response.data);
 		} 
@@ -56,13 +56,14 @@ function App() {
 		
 		try 
 		{
-			const response = await api.get(`/api/movies/${movieId}`);
+			const response = await api.get(`/api/v1/movies/${movieId}`);
 			const singleMovie = response.data;
+			console.log(singleMovie);
 			// setting state for the "movie" var
 			setMovie(singleMovie);
-			setReviews(singleMovie.reviewIds);
-
 			// extracting reviews array from movie data and track its state
+			setReviews(singleMovie.reviews);
+
 		}
 		catch (error) 
 		{
@@ -81,8 +82,6 @@ function App() {
 				<Route path="/" element={<Layout/>}>
 
 					<Route path="/" 
-
-					
 						element={<Home movies = {movies}/>} /> 
 					
 					<Route path="/Trailer/:ytTrailerId" 
